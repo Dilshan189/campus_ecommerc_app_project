@@ -1,15 +1,25 @@
 import 'package:campus_ecommerc_app_project/consts/consts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
-import '../../consts/list.dart';
+
 import '../../widgets_common/applogo_widget.dart';
 import '../../widgets_common/bg_widget.dart';
 import '../../widgets_common/customer_textfield.dart';
 import '../../widgets_common/our_button.dart';
 
-class singupScreen extends StatelessWidget {
+class singupScreen extends StatefulWidget {
   const singupScreen({super.key});
+
+  @override
+  State<singupScreen> createState() => _singupScreenState();
+}
+
+class _singupScreenState extends State<singupScreen> {
+
+  bool? isCheck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,54 +40,90 @@ class singupScreen extends StatelessWidget {
                   customTextField(hint: passwordHint, title: password),
                   customTextField(hint: passwordHint, title: retypePassword),
 
-                  const Align(
+                   Align(
                     alignment: Alignment.centerRight,
-                    // child: TextButton(
-                    //   onPressed: () {},
-                    //   child: forgetpassword.text.make(),
-                    // ),
-                  ),
-                  5.heightBox,
-                  // ourButton(
-                  //   color: redColor,     [all are command and today end this one]
-                  //   title: login,
-                  //   textColor: whiteColor,
-                  //   onPress: () {},
-                  // ).box.width(context.screenWidth - 50).make(),
-                  // 5.heightBox,
-                 // createNewAccount.text.color(fontGrey).make(),
-                  5.heightBox,
+                    child: TextButton(onPressed: (){}, child: forgetpassword.text.make())),
 
+
+                    Row(                        /// added check box
+                      children: [
+                        Checkbox(
+                          checkColor: redColor,
+                          value: isCheck,
+                          onChanged: (newValue) {
+                            setState(() {
+                              isCheck = newValue;
+                            });
+                          },
+                        ),
+                        5.widthBox,
+
+                        Expanded(
+                          child: RichText(text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "I agree to the ",style: TextStyle(
+                                fontFamily: regular,
+                                color: fontGrey,
+                              ),
+                              ),
+                              TextSpan(
+                                text: termAndCond,style: TextStyle(
+                                fontFamily: regular,
+                                color: redColor,
+                              ),
+                              ),
+
+                              TextSpan(
+                                text:" & ",
+                                style: TextStyle(
+                                fontFamily: regular,
+                                color: fontGrey,
+                              ),
+                              ),
+
+                              TextSpan(
+                                text: privacyPolicy,
+                                style: TextStyle(
+                                fontFamily: regular,
+                                color: redColor,
+
+                              ),
+                              ),
+
+
+                            ]
+                          ),
+
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  5.heightBox,
                   ourButton(
-                    color:  redColor,
+                    color:isCheck == true? redColor:lightGrey,
                     title: signup,
                     textColor: whiteColor,
-                    onPress: () {},
+                    onPress: (
+
+                        ) {},
                   ).box.width(context.screenWidth - 50).make(),
 
                   10.heightBox,
-                  loginWith.text.color(fontGrey).make(),
-                  15.heightBox,
+
+                  ///wrapping into gesture of velocity
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                        3,
-                            (index) => Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            backgroundColor: lightGrey,
-                            radius: 25,
-                            child: Image.asset(socialIconList[index],
-                              width: 30,),
-                          ),
-                        )),
+                    children: [
+                      alreadyHaveAccount.text.color(fontGrey).make(),
+                      login.text.color(redColor).make().onTap(() {
+                        Get.back();
+                      })
+                    ],
                   ),
-
-
-
                 ],
               ).box.white.rounded.padding(const EdgeInsets.all(16)).width(context.screenWidth - 70).shadowSm.make(),
-
             ],
           ),
         ),

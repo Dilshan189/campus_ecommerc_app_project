@@ -14,3 +14,10 @@ const login = "Login in";
 const signup = "sign up";
 const creatNewAccount = "or,create a new account ";
 const loginWith = "Login With";
+const privacyPolicy = "privacyPolicy";
+const termAndCond = "Terms and Condition ";
+const alreadyHaveAccount = "Already  have an account  ";
+
+//home Strings
+
+const home = "Home" , categories = "Categories" , cart = "cart" , account = "Account";
