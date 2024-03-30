@@ -1,56 +1,67 @@
+import 'package:campus_ecommerc_app_project/consts/colors.dart';
 import 'package:campus_ecommerc_app_project/consts/consts.dart';
-import 'package:campus_ecommerc_app_project/controllers/home_controller.dart';
+import 'package:campus_ecommerc_app_project/consts/list.dart';
+import 'package:campus_ecommerc_app_project/widgets_common/home_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+class  HomeScreen extends StatelessWidget {
+  const  HomeScreen ({super.key});
 
   @override
   Widget build(BuildContext context) {
-//ini home controller
-  var  controller = Get.put(HomeController());
-
-    var navbarItem = [
-      BottomNavigationBarItem(icon: Image.asset(icHome,width: 26),label: home),
-      BottomNavigationBarItem(icon: Image.asset(icCategories,width: 26),label:categories ),
-      BottomNavigationBarItem(icon: Image.asset(icCart,width: 26),label: cart),
-      BottomNavigationBarItem(icon: Image.asset(icProfile,width: 26),label: account),
-
-
-    ];
-
-    var navBody = [
-      Container(color: Colors.blue),
-      Container(color: Colors.amber),
-      Container(color: Colors.purple),
-      Container(color: Colors.cyan),
-
-    ];
-
-    return Scaffold(
-      body: Column(
+    return Container(
+      padding: const EdgeInsets.all(12),
+      color: lightGrey,
+      width: context.screenWidth,
+      height: context.screenHeight,
+      child: SafeArea(child:Column(
         children: [
-          Obx(() => Expanded(
-              child: navBody.elementAt(controller.currentNavIndex.value)),
+          Container(
+            alignment: Alignment.center,
+            height:60,
+            color: lightGrey,
+            child: TextFormField(
+              decoration: const InputDecoration(
+                suffixIcon: Icon(Icons.search),    /// added search Button ////////
+                filled: true,
+                fillColor: whiteColor,
+                hintText:searchanything,
+                hintStyle: TextStyle(color: textfieldGrey),
+              ),
+            ),
           ),
-        ],
-      ),
-      bottomNavigationBar: Obx(
-          () => BottomNavigationBar(
-            currentIndex: controller.currentNavIndex.value,
-          selectedItemColor: redColor,
-          selectedLabelStyle: const TextStyle(fontFamily: semibold),
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: whiteColor,
-          items:navbarItem ,
-            onTap: (value){
-              controller.currentNavIndex.value = value;
-            },
-        ),
-      ),
+
+
+          /// swiper brands //////////////////////////////////  card auto play /////////////////////////////
+
+          VxSwiper.builder(
+            aspectRatio: 16/9,
+              autoPlay: true,
+              height: 150,
+              enlargeCenterPage: true,
+              itemCount:sliderList.length,
+              itemBuilder: (context,index) {
+            return Image.asset(
+                  sliderList[index],
+                  fit: BoxFit.fill,
+                 ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();
+              }),
+
+          10.heightBox,
+
+          //deals buttons added
+
+          Row(
+            children: List.generate(2, (index) => homeButtons(
+                height:context.screenHeight * 0.2,
+                width:context.screenWidth / 2.5,
+                icon: index == 0 ? icTodaysDeal : icFlashDeal,
+                title: index == 0 ? todayDeal :flashsale,
+            )),
+          ),
+
+         ],
+      )),
     );
   }
 }

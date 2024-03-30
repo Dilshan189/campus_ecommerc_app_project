@@ -1,7 +1,7 @@
 import 'package:campus_ecommerc_app_project/consts/consts.dart';
 import 'package:campus_ecommerc_app_project/consts/list.dart';
 import 'package:campus_ecommerc_app_project/views/auth_screen/singup_screen.dart';
-import 'package:campus_ecommerc_app_project/views/home_screen/home_screen.dart';
+import 'package:campus_ecommerc_app_project/views/home_screen/home.dart';
 import 'package:campus_ecommerc_app_project/widgets_common/applogo_widget.dart';
 import 'package:campus_ecommerc_app_project/widgets_common/bg_widget.dart';
 import 'package:campus_ecommerc_app_project/widgets_common/customer_textfield.dart';
@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                     title: login,
                     textColor: whiteColor,
                     onPress: () {
-                      Get.to(()=> const HomeScreen());
+                      Get.to(()=> const Home());
                     },
                   ).box.width(context.screenWidth - 50).make(),
                   5.heightBox,
@@ -90,4 +90,5 @@ class LoginScreen extends StatelessWidget {
   }
 
   Text get createNewAccount => const Text("Create New Account");
+
 }

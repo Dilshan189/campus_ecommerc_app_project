@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 const appname = "eMart";
 const appversion = "Version 1.0.0";
 const credits = "@Dilshan Rathnayak";
@@ -20,4 +22,17 @@ const alreadyHaveAccount = "Already  have an account  ";
 
 //home Strings
 
-const home = "Home" , categories = "Categories" , cart = "cart" , account = "Account";
+const home = "Home" ,
+    categories = "Categories" ,
+    cart = "cart" ,
+    account = "Account";
+
+
+//home screen String
+
+const searchanything = "Search anything...." ,
+    todayDeal = " Today's Deal ",
+    flashsale = "Flash Sale",
+    topSEllers = "Top Sellers",
+    Brand = "Brand",
+    topCategories = "Top Categories";
