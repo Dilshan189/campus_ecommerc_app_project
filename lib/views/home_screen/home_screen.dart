@@ -47,18 +47,38 @@ class  HomeScreen extends StatelessWidget {
                  ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();
               }),
 
-          10.heightBox,
+          15.heightBox,
 
           //deals buttons added
 
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(2, (index) => homeButtons(
-                height:context.screenHeight * 0.2,
+                height:context.screenHeight * 0.15,
                 width:context.screenWidth / 2.5,
                 icon: index == 0 ? icTodaysDeal : icFlashDeal,
                 title: index == 0 ? todayDeal :flashsale,
             )),
           ),
+
+          /// 2nd swiper
+
+          15.heightBox,
+
+          VxSwiper.builder(
+              aspectRatio: 16/9,
+              autoPlay: true,
+              height: 150,
+              enlargeCenterPage: true,
+              itemCount:secondSliderList.length,
+              itemBuilder: (context,index) {
+                return Image.asset(
+                  secondSliderList[index],
+                  fit: BoxFit.fill,
+                ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();
+              }),
+
+
 
          ],
       )),

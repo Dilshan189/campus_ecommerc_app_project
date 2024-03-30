@@ -14,3 +14,10 @@ const sliderList = [
   imgSlider4,
 ];
 
+
+const secondSliderList = [
+  imgSs1,
+  imgSs2,
+  imgSs3,
+  imgSs4,
+];

@@ -1,13 +1,14 @@
 import 'package:campus_ecommerc_app_project/consts/consts.dart';
 import 'package:flutter/cupertino.dart';
 
-Widget homeButtons({ icon, width,height, title}) {
+Widget homeButtons({ icon, width,height, String ? title, onPress}) {
   return  Column(
+    mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(icTodaysDeal,width: 26),
-        5.heightBox,
-        todayDeal.text.fontFamily(semibold).color(darkFontGrey).make(),
+        Image.asset(icon,width: 26),
+        10.heightBox,
+        title!.text.fontFamily(semibold).color(darkFontGrey).make(),
       ],
-  ).box.rounded.white.size(width, height, ).make();
+  ).box.rounded.white.size(width, height, ).shadowSm.make();
 
 }
