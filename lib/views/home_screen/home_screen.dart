@@ -1,3 +1,4 @@
+import 'package:campus_ecommerc_app_project/components/featured_button.dart';
 import 'package:campus_ecommerc_app_project/consts/colors.dart';
 import 'package:campus_ecommerc_app_project/consts/consts.dart';
 import 'package:campus_ecommerc_app_project/consts/list.dart';
@@ -107,24 +108,92 @@ class  HomeScreen extends StatelessWidget {
             
                 ///featured categories////////////////////////////////////////////////
             
-                10.heightBox,
+                20.heightBox,
             
                 Align(
                   alignment: Alignment.centerLeft,
                   child: featuredCategories.text.color(darkFontGrey).size(18).fontFamily(semibold).make(),
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: featuredCategories.text.color(darkFontGrey).size(18).fontFamily(semibold).make(),
+
+                20.heightBox,
+
+                SingleChildScrollView(
+                 scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(3, (index) => Column(
+                      children: [
+                        featuredButoon(icon: featuredImages1[index],title: featuredTitleS1[index]),
+                        10.heightBox,
+                        featuredButoon(icon: featuredImages2[index],title: featuredTitleS2[index]),
+                      ],
+                    )),
+                  ),
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: featuredCategories.text.color(darkFontGrey).size(18).fontFamily(semibold).make(),
+
+              20.heightBox,
+                ///featured product/////////////////////////////////////////////
+
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  width: double.infinity,
+                  decoration: const BoxDecoration(color: redColor),
+                  child:  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      featuredProduct.text.white.fontFamily(bold).size(18).make(),
+                      10.heightBox,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: List.generate(6, (index) => Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(imgP1,width: 150,fit: BoxFit.cover,
+                              ),
+                              10.heightBox,
+                              "Laptop 4GB/64GB".text.fontFamily(semibold).color(Colors.black).make(),
+                              10.heightBox,
+                              "\$600".text.fontFamily(semibold).color(Colors.red).size(18).make(),
+                            ],
+                          ).box.white.margin(const EdgeInsets.symmetric(horizontal:4)).roundedSM.padding(const EdgeInsets.all(8)).make()),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: featuredCategories.text.color(darkFontGrey).size(18).fontFamily(semibold).make(),
-                ),
+
+
+                ///third swiper////////////////////////////////////////////////
+                  20.heightBox,
+
+                VxSwiper.builder(
+                    aspectRatio: 16/9,
+                    autoPlay: true,
+                    height: 150,
+                    enlargeCenterPage: true,
+                    itemCount:secondSliderList.length,
+                    itemBuilder: (context,index) {
+                      return Image.asset(
+                        secondSliderList[index],
+                        fit: BoxFit.fill,
+                      ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();
+                    }),
+
+                20.heightBox,
+
+                /// all product  section ///////////////////////////////////////
+                  
+              GridView.builder(
+                shrinkWrap: true,
+                  itemCount: 6,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 8,crossAxisSpacing: 8), itemBuilder: (context,index){
+                return Container(
+                  color:redColor,
+
+
+                );
+              })
+
               ],
             ),
           ),

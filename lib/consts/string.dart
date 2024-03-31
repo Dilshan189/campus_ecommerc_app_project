@@ -21,6 +21,7 @@ const termAndCond = "Terms and Condition ";
 const alreadyHaveAccount = "Already  have an account  ";
 const featuredCategories = "Featured Categories";
 
+
 //home Strings
 
 const home = "Home" ,
@@ -36,4 +37,12 @@ const searchanything = "Search anything...." ,
     flashsale = "Flash Sale",
     topSEllers = "Top Sellers",
     Brand = "Brand",
-    topCategories = "Top Categories";
+    topCategories = "Top Categories",
+    womenDress = "Women Dress",
+    girlsWatches = "Girls Watchs",
+    mobilePhone = "Mobile Phone",
+    boysGlasses = "Boys Glasses",
+    girlsDress = "Girl Dress",
+    featuredProduct = "Featured Product",
+    tShirts = "Tshirts";
+
