@@ -1,7 +1,7 @@
 import 'package:campus_ecommerc_app_project/consts/consts.dart';
 import 'package:flutter/cupertino.dart';
 
-Widget homeButtons({ icon, width,height, String ? title, onPress}) {
+Widget homeButtons({ icon, width,height, String ? title, onPress , brand }) {
   return  Column(
     mainAxisAlignment: MainAxisAlignment.center,
       children: [

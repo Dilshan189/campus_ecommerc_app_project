@@ -19,6 +19,7 @@ const loginWith = "Login With";
 const privacyPolicy = "privacyPolicy";
 const termAndCond = "Terms and Condition ";
 const alreadyHaveAccount = "Already  have an account  ";
+const featuredCategories = "Featured Categories";
 
 //home Strings
 
