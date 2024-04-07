@@ -28,3 +28,28 @@ const featuredImages2 = [imgS4,imgS5,imgS6];
 const featuredTitleS1 = [womenDress,girlsDress,girlsWatches];
 const featuredTitleS2 = [boysGlasses,mobilePhone,tShirts];
 
+
+const categoryList = [
+  womenDress,
+  menClothingFashion,
+  compAccess,
+  automobile,
+  kidtoys,
+  sports,
+  jewelery,
+  cellphone,
+  furniture,
+
+];
+
+const categoryImages = [
+  imgFc1,
+  imgFc2,
+  imgFc3,
+  imgFc4,
+  imgFc5,
+  imgFc6,
+  imgFc7,
+  imgFc8,
+  imgFc9,
+];

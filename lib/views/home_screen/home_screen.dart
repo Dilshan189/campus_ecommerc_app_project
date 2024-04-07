@@ -49,6 +49,7 @@ class  HomeScreen extends StatelessWidget {
           
             child: Column(
               children: [
+
                 VxSwiper.builder(
                     aspectRatio: 16/9,
                     autoPlay: true,
@@ -79,7 +80,7 @@ class  HomeScreen extends StatelessWidget {
                 /// 2nd swiper ///////////////////////////////////////////////////////
             
                 15.heightBox,
-            
+
                 VxSwiper.builder(
                     aspectRatio: 16/9,
                     autoPlay: true,
@@ -92,6 +93,8 @@ class  HomeScreen extends StatelessWidget {
                         fit: BoxFit.fill,
                       ).box.rounded.clip(Clip.antiAlias).margin(const EdgeInsets.symmetric(horizontal: 8)).make();
                     }),
+
+
             
                 /// category buttons ///////////////////////////////////////////////
             
@@ -181,19 +184,31 @@ class  HomeScreen extends StatelessWidget {
 
                 20.heightBox,
 
+
                 /// all product  section ///////////////////////////////////////
                   
               GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                   itemCount: 6,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 8,crossAxisSpacing: 8), itemBuilder: (context,index){
-                return Container(
-                  color:redColor,
-
-
-                );
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 8,crossAxisSpacing: 8,mainAxisExtent: 300),
+                  itemBuilder: (context,index){
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      imgP5,
+                      height:200,
+                      width: 200,
+                      fit: BoxFit.cover,
+                    ),
+                    const Spacer(),
+                    "Laptop 4GB/64GB".text.fontFamily(semibold).color(Colors.black).make(),
+                    10.heightBox,
+                    "\$600".text.fontFamily(semibold).color(Colors.red).size(18).make(),
+                  ],
+                ).box.white.margin(const EdgeInsets.symmetric(horizontal:4)).roundedSM.padding(const EdgeInsets.all(12)).make();
               })
-
               ],
             ),
           ),
@@ -204,4 +219,6 @@ class  HomeScreen extends StatelessWidget {
 }
 
  String get brand => "Brand";
+
+
 
