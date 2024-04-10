@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344386659138",
+    "project_id": "ecom-b0be6",
+    "storage_bucket": "ecom-b0be6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344386659138:android:1b1181b5ee8eafa04ededb",
+        "android_client_info": {
+          "package_name": "com.example.campus_ecommerc_app_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy3V87ZuApaWHqW5xEvEeTuqM_FJ-LCTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

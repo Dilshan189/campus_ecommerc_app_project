@@ -58,3 +58,18 @@ const womenClothing  = "Women Clothing",
     cellphone = "Cellphone & Tab ",
     furniture = "Furniture";
 
+//item details strings
+
+const video = "Video",
+    reviews = "Reviews",
+    sellerPolicy = "Seller Policy",
+    returnPolicy = "Return Policy",
+    supportPolicy = "Support Policy",
+    productsyoumaylike = "Product you may also like";
+
+
+//profile  strings
+
+const wishlist = "My Wishlist",
+    orders = "My Orders",
+    messages = "Messages";
