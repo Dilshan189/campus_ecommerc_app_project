@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "344386659138",
-    "project_id": "ecom-b0be6",
-    "storage_bucket": "ecom-b0be6.appspot.com"
+    "project_number": "935487541762",
+    "project_id": "emart-43b75",
+    "storage_bucket": "emart-43b75.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:344386659138:android:1b1181b5ee8eafa04ededb",
+        "mobilesdk_app_id": "1:935487541762:android:83afc28ece0bf202f98d1b",
         "android_client_info": {
           "package_name": "com.example.campus_ecommerc_app_project"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDy3V87ZuApaWHqW5xEvEeTuqM_FJ-LCTM"
+          "current_key": "AIzaSyDSx0Gxslgbj6CEKPVHcCcbOtNi2uEXd6c"
         }
       ],
       "services": {

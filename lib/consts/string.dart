@@ -20,6 +20,9 @@ const privacyPolicy = "privacyPolicy";
 const termAndCond = "Terms and Condition ";
 const alreadyHaveAccount = "Already  have an account  ";
 const featuredCategories = "Featured Categories";
+const logout = "Log Out";
+const loggedin = "Log in successfully";
+const loggedout = "Log Out successfully";
 
 
 //home Strings

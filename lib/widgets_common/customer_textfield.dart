@@ -9,6 +9,7 @@ Widget customTextField({String? title,String? hint,controller}){
       title!.text.color(redColor).fontFamily(semibold).size(16).make(),
       5.heightBox,
       TextFormField(
+        controller: controller,
         decoration:  InputDecoration(
           hintStyle: const TextStyle(
             fontFamily: semibold,

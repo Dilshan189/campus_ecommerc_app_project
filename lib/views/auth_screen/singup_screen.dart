@@ -1,4 +1,5 @@
 import 'package:campus_ecommerc_app_project/consts/consts.dart';
+import 'package:campus_ecommerc_app_project/controllers/auth_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -9,6 +10,7 @@ import '../../widgets_common/applogo_widget.dart';
 import '../../widgets_common/bg_widget.dart';
 import '../../widgets_common/customer_textfield.dart';
 import '../../widgets_common/our_button.dart';
+import '../home_screen/home.dart';
 
 class singupScreen extends StatefulWidget {
   const singupScreen({super.key});
@@ -20,6 +22,15 @@ class singupScreen extends StatefulWidget {
 class _singupScreenState extends State<singupScreen> {
 
   bool? isCheck = false;
+  var controller = Get.put(AuthController());
+
+  ///text controllers/////////////////////////////////////////////////////////
+
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordRetypeController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +46,10 @@ class _singupScreenState extends State<singupScreen> {
               "Join the $appname".text.fontFamily(bold).white.size(18).make(),
               Column(
                 children: [
-                  customTextField(hint: namHint, title: name),
-                  customTextField(hint: emailHint, title: email),
-                  customTextField(hint: passwordHint, title: password),
-                  customTextField(hint: passwordHint, title: retypePassword),
+                  customTextField(hint: namHint, title: name,controller: nameController),
+                  customTextField(hint: emailHint, title: email,controller: emailController),
+                  customTextField(hint: passwordHint, title: password,controller: passwordController),
+                  customTextField(hint: passwordHint, title: retypePassword,controller: passwordRetypeController),
 
                    Align(
                     alignment: Alignment.centerRight,
@@ -105,9 +116,18 @@ class _singupScreenState extends State<singupScreen> {
                     color:isCheck == true? redColor:lightGrey,
                     title: signup,
                     textColor: whiteColor,
-                    onPress: (
-
-                        ) {},
+                    onPress: () async {
+                      if(isCheck !=false){
+                        try {
+                          await controller.signupMethod(context:context,email:emailController.text,password:passwordController.text).then((value) {
+                            return controller.storeUserDta(email: emailController.text, password: passwordController.text, name: nameController.text);
+                          }).then((value) {
+                            VxToast.show(context, msg: loggedin);
+                            Get.offAll(()=>Home());
+                          });
+                        }catch (e) {}
+                      }
+                    },
                   ).box.width(context.screenWidth - 50).make(),
 
                   10.heightBox,
