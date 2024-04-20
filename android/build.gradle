@@ -2,9 +2,13 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+
     }
 }
 
+dependencies{
+
+}
 
 rootProject.buildDir = '../build'
 subprojects {

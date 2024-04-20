@@ -96,7 +96,7 @@ class  ProfilSecreen extends StatelessWidget {
                   );
                 },
               ).box.white.rounded
-                  .margin(EdgeInsets.all(12))
+                  .margin(const EdgeInsets.all(12))
                   .padding(const EdgeInsets.symmetric(horizontal: 16))
                   .shadowSm.make().box.color(redColor)
                   .make(),
